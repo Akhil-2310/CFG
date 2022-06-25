@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getFirestore } from "firebase/analytics";
 
 const app = firebase.initializeApp({
     apiKey: process.env.REACT_APP_APIKEY,
