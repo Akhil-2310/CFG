@@ -10,6 +10,7 @@ import AdminListItem from './Components/AdminListItem';
 import AdminListItemForm from './Components/AdminListItemForm';
 import AdminList from './AdminList';
 import ShowDonors from './Admin_don';
+import ShowAmount from './Amount';
 
 function App() {
   const users = [{
@@ -23,7 +24,8 @@ function App() {
   }]
   return (
     <div className="App">
-      <ShowDonors />
+      {/* <ShowDonors /> */}
+      <ShowAmount />
       {/* <ShowInventory/> */}
       {/* <Display users={users}/> */}
       {/* <Header/> */}
