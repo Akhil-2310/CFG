@@ -13,11 +13,11 @@ function App() {
   return (
     <div className="App">
       
-      <CardsList/>
+   
       {/* <Header/> */}
       <ShowInventory/>
       
-      <Inv />
+      
       {/* <Cart/> */}
     </div>
   );
