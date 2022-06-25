@@ -9,30 +9,32 @@ import Donate from './Components/donorpage/Donate';
 import AdminListItem from './Components/AdminListItem';
 import AdminListItemForm from './Components/AdminListItemForm';
 import AdminList from './AdminList';
+import ShowDonors from './Admin_don';
 
 function App() {
-  const users=[{
-    "corporate":true,
-    "donation":{
-      "rice":"500"
+  const users = [{
+    "corporate": true,
+    "donation": {
+      "rice": "500"
     },
-    "email":"dfsd@gmail.com",
-    "name":"hello",
-    "phone":"9380309384"
+    "email": "dfsd@gmail.com",
+    "name": "hello",
+    "phone": "9380309384"
   }]
   return (
     <div className="App">
+      <ShowDonors />
       {/* <ShowInventory/> */}
       {/* <Display users={users}/> */}
       {/* <Header/> */}
-      
-   
+
+
       {/* <Header/> */}
       {/* <ShowInventory/> */}
       {/* <Donate/> */}
-      
+
       {/* <CardsList/> */}
-      
+
       {/* <Display users={users}/> */}
       {/* <ShowInventory/>
       
@@ -40,8 +42,8 @@ function App() {
       <Display users={users}/> */}
       {/* <Header/> */}
       {/* <Cart/> */}
-      <AdminList/>
-      
+      {/* <AdminList /> */}
+
     </div>
   );
 }
