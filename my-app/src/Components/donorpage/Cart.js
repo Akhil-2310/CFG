@@ -9,7 +9,7 @@ function Cart() {
         <span class="leftarrow"><img class="mt-1" src="" width="40px"></img></span>
         <div class="d-flex justify-content-start align-items-center" >
         <i class="fa-solid fa-arrow-left fa-2x"  ></i>
-        <a class="btn btn-primary mt-2 ms-2">Continue Shopping</a>
+        <a class="btn btn-primary mt-2 ms-2">Back</a>
         </div>
         <hr/>
         <div class="row">
