@@ -27,7 +27,7 @@ function App() {
       {/* <Header/> */}
       {/* <ShowInventory/> */}
       {/* <Donate/> */}
-      <CardsList/>
+      {/* <CardsList/> */}
       
       {/* <Display users={users}/> */}
       {/* <ShowInventory/>

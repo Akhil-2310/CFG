@@ -1,12 +1,29 @@
 import React, { useEffect, useState } from "react";
-import InvCard from './InvCard';
-import { getDocs, collection, addDoc, updateDoc, doc } from "firebase/firestore";
+import InvCard from "./InvCard";
+import {
+  getDocs,
+  collection,
+  addDoc,
+  updateDoc,
+  doc,
+} from "firebase/firestore";
 import { db } from "./firebase";
 import Showform from "./form";
-import { Link, Routes, Route } from "react-router-dom"
+import { Link, Routes, Route } from "react-router-dom";
 
 function ShowInventory() {
-  const [newcat, setNewCat] = useState("");
+
+  const options = [
+    {value: '', text: '--Choose an option--'},
+    {value: 'pulses', text: 'Pulses'},
+    {value: 'grains', text: 'Grains'},
+    {value: 'fruits', text: 'Fruits'},
+    {value: 'vegetables', text: 'Vegetables'},
+    {value: 'others', text: 'Others'},
+  ];
+  
+  const [activatedInput, changeActivation] = useState(false);
+  const [newcat, setnewcat] = useState(options[0].value);
   const [newitemname, setitemname] = useState("");
   const [newitemcost, setitemcost] = useState(0);
   const [invRecs, setInvRecs] = useState([]);
@@ -14,23 +31,43 @@ function ShowInventory() {
 
 
   useEffect(() => {
+
     const getInvRecs = async () => {
       const data = await getDocs(invCollectionRef);
-      setInvRecs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-
+      setInvRecs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     getInvRecs();
-  }, [])
+  },[]);
 
-  const createRow = async () => {
-    await addDoc(invCollectionRef, { category: newcat, itemname: newitemname, itemcost: Number(newitemcost) });
-  };
 
+
+  // async function handleClick(){
+  //   console.log(newitemname+" "+newcat+" "+newitemcost);
+  //   // const createUser = async () => {
+  //   //   await addDoc(invCollectionRef, { itemname: newitemname, category: newcat, itemcost: Number(newitemcost)});
+  //   // };
+
+    
+  //     await addDoc(collection(db,"inventory"),{ itemname: newitemname, category: newcat, itemcost: Number(newitemcost)})
+  //   //  addDoc(invCollectionRef, { itemname: newitemname, category: newcat, itemcost: Number(newitemcost)});
+    
+  //   // console.log(createUser);
+  // }
+
+  const handleSubmit = async (e) => {
+    // e.preventDefault()
+    try {
+      await addDoc(collection(db, "inventory"), {
+        itemname: newitemname, category: newcat, itemcost: Number(newitemcost)
+      })
+      // onClose()
+    } catch (err) {
+      alert(err)
+    }
+  }
 
   return (
-
     <div class="container px-5 py-24 mx-auto">
-
       <div class="flex flex-col text-center w-full mb-20">
         <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">
           My Inventory
@@ -51,26 +88,47 @@ function ShowInventory() {
             </tr>
           </thead>
         </table>
-        {
-          invRecs.map((invRecItem, index) => {
-            return <InvCard
+        {invRecs.map((invRecItem, index) => {
+          return (
+            <InvCard
               key={index}
               name={invRecItem.itemname}
               category={invRecItem.category}
               price={invRecItem.itemcost}
             ></InvCard>
-          })
-        }
-
+          );
+        })}
       </div>
-      <Link to='/form' type="button" class="btn " style={{ backgroundColor: 'rgb(79, 90, 132)', color: 'white' }}>Add Item</Link>
-      <Routes> <Route path='/form' element={<Showform />} />
-      </Routes>
 
+      <h1>Add New Item</h1>
+
+         <form class="p-10">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Name</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" onChange={(event)=>{setitemname(event.target.value)}}  />
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Category</label>
+                <div>
+                <select value={newcat} onChange={(event)=>{setnewcat(event.target.value)}} class="mx-auto">
+        {options.map(option => (
+          <option key={option.value} value={option.value}>
+            {option.text}
+          </option>
+        ))}
+      </select>
+                </div>
+       
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Price</label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" onChange={(event)=>{setitemcost(event.target.value)}} />
+            </div>
+
+            <button type="submit" class="btn mt-5" onClick={handleSubmit} style={{ backgroundColor: "rgb(79, 90, 132)", color: "white" }}> Submit </button>
+        </form>
     </div>
-
   );
 }
-
 
 export default ShowInventory;
