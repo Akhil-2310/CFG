@@ -1,7 +1,14 @@
 import React from 'react'
-
+import {useNavigate} from 'react-router-dom'
 
 function Cart() {
+    const navigate = useNavigate()
+    const goback=()=>{
+      navigate('/listitems')
+    }
+    const gotocheckout=()=>{
+        navigate('/checkout')
+      }
   return (
     <div>
         <div class="row mt-4">
@@ -9,7 +16,7 @@ function Cart() {
         <span class="leftarrow"><img class="mt-1" src="" width="40px"></img></span>
         <div class="d-flex justify-content-start align-items-center" >
         <i class="fa-solid fa-arrow-left fa-2x"  ></i>
-        <a class="btn btn-primary mt-2 ms-2">Back</a>
+        <button class="btn btn-primary mt-2 ms-2" onClick={()=>goback()}>Back</button>
         </div>
         <hr/>
         <div class="row">
@@ -21,7 +28,7 @@ function Cart() {
             </div>
             <div class="col">
                 {/* <a href="{% url 'checkout' %}" class="btn btn-success m-2" style="float: right; display: inline-block;">Checkout</a> */}
-                <button class="btn btn-success m-2" style={{float: 'right'}}>Checkout</button>
+                <button class="btn btn-success m-2" onClick={()=>gotocheckout()}  style={{float: 'right'}}>Checkout</button>
             </div>
         </div>
     </div>

@@ -81,6 +81,10 @@ console.log(uniqueList);
 
   return (
     <div style={{backgroundColor: 'rgb(243, 244, 246)'}}>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Thank you for registering!</strong> You can choose from the items below.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
       <NavBarCards filterItem={filterItem} menuList={menuList} />
       <Card menuData={menuData} />
     </div>

@@ -14,6 +14,7 @@ import Header from './Components/Navbar/Header'
 import ShowDonors from './Admin_don';
 import ShowAmount from './Amount';
 
+
 function App() {
   const users = [{
     "corporate": true,
@@ -24,7 +25,6 @@ function App() {
     "name": "hello",
     "phone": "9380309384"
   }]
-<<<<<<< HEAD
 
   return <BrowserRouter>
     {/* Nested routing */}
@@ -34,6 +34,8 @@ function App() {
         <Route index element={<Home />} />
         <Route path='listitems' element={<CardsList />} />
         <Route path='cart' element={<Cart />} />
+        <Route path='checkout' element={<h1>Checkout</h1>} />
+        <Route path='donate' element={<Donate/>} />
         {/* <Route path='cart' element ={<Cart/>}/> */}
     
       </Route>
@@ -43,34 +45,6 @@ function App() {
 
 
 
-=======
-  return (
-    <div className="App">
-      {/* <ShowDonors /> */}
-      <ShowAmount />
-      {/* <ShowInventory/> */}
-      {/* <Display users={users}/> */}
-      {/* <Header/> */}
-
-
-      {/* <Header/> */}
-      {/* <ShowInventory/> */}
-      {/* <Donate/> */}
-
-      {/* <CardsList/> */}
-
-      {/* <Display users={users}/> */}
-      {/* <ShowInventory/>
-      
-      
-      <Display users={users}/> */}
-      {/* <Header/> */}
-      {/* <Cart/> */}
-      {/* <AdminList /> */}
-
-    </div>
-  );
->>>>>>> c099a324aa7026026a988492fe41c3a00e7939b5
 }
 
 export default App;
