@@ -19,7 +19,7 @@ function App() {
   }]
   return (
     <div className="App">
-      <ShowInventory/>
+      {/* <ShowInventory/> */}
       {/* <Display users={users}/> */}
       {/* <Header/> */}
       
