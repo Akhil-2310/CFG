@@ -1,7 +1,7 @@
 import './App.css';
 import Home from '../src/Components/Home/Home'
 import Cart from './Components/donorpage/Cart';
-import Header from './Components/Navbar/Header';
+// import Header from '../src/Components/Navbar/Header';
 import Display from './Components/donorpage/Display';
 import ShowInventory from './ShowInventory';
 import CardsList from './CardsList';
@@ -19,6 +19,9 @@ function App() {
   }]
   return (
     <div className="App">
+      <ShowInventory/>
+      {/* <Display users={users}/> */}
+      {/* <Header/> */}
       
    
       {/* <Header/> */}
@@ -27,6 +30,10 @@ function App() {
       <CardsList/>
       
       {/* <Display users={users}/> */}
+      {/* <ShowInventory/>
+      
+      
+      <Display users={users}/> */}
       {/* <Header/> */}
       {/* <Cart/> */}
     </div>
