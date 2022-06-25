@@ -7,7 +7,8 @@ import Donate from '../donorpage/Donate';
 function Header() {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+            <nav className="navbar navbar-expand-lg navbar-dark " style={{"background-color": "#525d87"}} >
+            <div className="container-fluid">
                 <img />
                 <a className="navbar-brand" href="#">Navbar</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +28,7 @@ function Header() {
                         </Link>
                     </div>
                 </div>
-                
+            </div>
             </nav>
             <Outlet />
             <Routes>
@@ -38,6 +39,33 @@ function Header() {
                 </Routes>
         </div>
         
+    //     <div className="background-color"> 
+    //     <nav className="navbar navbar-expand-lg navbar-light " style="background-color: #525d87;">
+    //         <div className="container-fluid">
+    //           {/* <!-- <a className="navbar-brand" href="#">Navbar</a> --> */}
+    //           <a className="navbar-brand" href="#">
+    //             <img src="logo2.png" alt="" width="80" height="20"/>
+    //           </a>
+    //           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    //             <span className="navbar-toggler-icon"></span>
+    //           </button>
+    //           <div className="collapse navbar-collapse navbar-element" id="navbarSupportedContent">
+    //             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+    //               <li className="nav-item">
+    //                 <a className="nav-link " aria-current="page" href="#" style="color: white;">About Us</a>
+    //               </li>
+    //               <li className="nav-item">
+    //                 <a className="nav-link" href="#" style="color: white;">Admin</a>
+    //               </li>
+    //               <li className="nav-item">
+    //                 <a className="nav-link" href="#" style="color: white;">User</a>
+    //               </li>
+    //             </ul>
+    //           </div>
+    //         </div>
+    //       </nav>
+    // </div>
+
     )
 }
 
