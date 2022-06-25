@@ -55,11 +55,12 @@ function ShowInventory() {
   // }
 
   const handleSubmit = async (e) => {
-    // e.preventDefault()
+    e.preventDefault()
     try {
       await addDoc(collection(db, "inventory"), {
         itemname: newitemname, category: newcat, itemcost: Number(newitemcost)
       })
+      window.location.reload();
       // onClose()
     } catch (err) {
       alert(err)
