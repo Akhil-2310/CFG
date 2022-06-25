@@ -20,6 +20,14 @@ function App() {
       <ShowInventory/>
       {/* <Display users={users}/> */}
       {/* <Header/> */}
+      
+   
+      {/* <Header/> */}
+      {/* <ShowInventory/>
+      
+      
+      <Display users={users}/> */}
+      {/* <Header/> */}
       {/* <Cart/> */}
     </div>
   );
