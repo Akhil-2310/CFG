@@ -4,6 +4,8 @@ import Cart from './Components/donorpage/Cart';
 // import Header from '../src/Components/Navbar/Header';
 import Display from './Components/donorpage/Display';
 import ShowInventory from './ShowInventory';
+import CardsList from './CardsList';
+import Donate from './Components/donorpage/Donate';
 
 function App() {
   const users=[{
@@ -23,6 +25,11 @@ function App() {
       
    
       {/* <Header/> */}
+      {/* <ShowInventory/> */}
+      {/* <Donate/> */}
+      <CardsList/>
+      
+      {/* <Display users={users}/> */}
       {/* <ShowInventory/>
       
       
