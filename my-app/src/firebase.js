@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "@firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCGRtkKKqC88bhZoQIrrXNPt9Cidw0U3Ns",
-    authDomain: "foodbank-f1ea5.firebaseapp.com",
-    projectId: "foodbank-f1ea5",
-    storageBucket: "foodbank-f1ea5.appspot.com",
-    messagingSenderId: "396010090736",
-    appId: "1:396010090736:web:4aa8aa56d89025f9a9d235",
-    measurementId: "G-XY1KLTVCL8"
+    apiKey: "AIzaSyAMmOmI8Sr3j3p0TkhFptTUlBIb50J60YY",
+    authDomain: "foodbank-cf654.firebaseapp.com",
+    projectId: "foodbank-cf654",
+    storageBucket: "foodbank-cf654.appspot.com",
+    messagingSenderId: "662839805386",
+    appId: "1:662839805386:web:7903363b50fbde3032fb33",
+    measurementId: "G-08XX8N5R45"
 };
 
 const app = initializeApp(firebaseConfig);

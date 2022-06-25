@@ -20,7 +20,7 @@ function ShowInventory() {
 
     };
     getInvRecs();
-  })
+  }, [])
 
   const createRow = async () => {
     await addDoc(invCollectionRef, { category: newcat, itemname: newitemname, itemcost: Number(newitemcost) });
