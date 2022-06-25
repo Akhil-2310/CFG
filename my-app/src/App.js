@@ -1,8 +1,9 @@
 import './App.css';
 import Home from '../src/Components/Home/Home'
 import Cart from './Components/donorpage/Cart';
-import Header from './Components/Navbar/Header';
+// import Header from '../src/Components/Navbar/Header';
 import Display from './Components/donorpage/Display';
+import ShowInventory from './ShowInventory';
 
 function App() {
   const users=[{
@@ -16,8 +17,9 @@ function App() {
   }]
   return (
     <div className="App">
-      <Display users={users}/>
-      <Header/>
+      <ShowInventory/>
+      {/* <Display users={users}/> */}
+      {/* <Header/> */}
       {/* <Cart/> */}
     </div>
   );
