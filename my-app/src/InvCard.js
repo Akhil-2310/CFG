@@ -6,12 +6,15 @@ function InvCard(props){
             <div>{props.name}</div>
             <div>{props.category}</div>
             <div className="ms-5 me-5">
-                {/* <span>
-               {props.price}
-                <img src={'images/up-arrow.jpg'} width='15'></img><img src={'images/down-arrow.png'} width='15'></img>
-                </span> */}
+                <span>
+               
+                <button><img src={'images/down-arrow.png'} class="mr-2" width='10'></img></button>
+                {props.price}
+            
+                <button><img src={'images/up-arrow.jpg'} class="ml-2" width='10'></img></button>
+                </span>
 
-                <input type="number" class="form-control" id="inputPassword" placeholder="Password" value={props.price}/>
+                {/* <input type="number" class="form-control" id="inputPassword" placeholder="Password" value={props.price}/> */}
             </div>
         </div>
     )
