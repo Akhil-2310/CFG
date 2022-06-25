@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/cfgmum22/team-50/issues"
   },
-  "homepage": "https://github.com/cfgmum22/team-50#readme"
+  "homepage": "https://github.com/cfgmum22/team-50#readme",
+  "dependencies": {
+    "firebase": "^9.8.4"
+  }
 }
