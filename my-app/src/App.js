@@ -11,6 +11,8 @@ import AdminListItem from './Components/AdminListItem';
 import AdminListItemForm from './Components/AdminListItemForm';
 import AdminList from './AdminList';
 import Header from './Components/Navbar/Header'
+import ShowDonors from './Admin_don';
+import ShowAmount from './Amount';
 
 function App() {
   const users = [{
@@ -22,6 +24,7 @@ function App() {
     "name": "hello",
     "phone": "9380309384"
   }]
+<<<<<<< HEAD
 
   return <BrowserRouter>
     {/* Nested routing */}
@@ -40,6 +43,34 @@ function App() {
 
 
 
+=======
+  return (
+    <div className="App">
+      {/* <ShowDonors /> */}
+      <ShowAmount />
+      {/* <ShowInventory/> */}
+      {/* <Display users={users}/> */}
+      {/* <Header/> */}
+
+
+      {/* <Header/> */}
+      {/* <ShowInventory/> */}
+      {/* <Donate/> */}
+
+      {/* <CardsList/> */}
+
+      {/* <Display users={users}/> */}
+      {/* <ShowInventory/>
+      
+      
+      <Display users={users}/> */}
+      {/* <Header/> */}
+      {/* <Cart/> */}
+      {/* <AdminList /> */}
+
+    </div>
+  );
+>>>>>>> c099a324aa7026026a988492fe41c3a00e7939b5
 }
 
 export default App;
