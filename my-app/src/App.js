@@ -6,6 +6,9 @@ import Display from './Components/donorpage/Display';
 import ShowInventory from './ShowInventory';
 import CardsList from './CardsList';
 import Donate from './Components/donorpage/Donate';
+import AdminListItem from './Components/AdminListItem';
+import AdminListItemForm from './Components/AdminListItemForm';
+import AdminList from './AdminList';
 
 function App() {
   const users=[{
@@ -19,7 +22,7 @@ function App() {
   }]
   return (
     <div className="App">
-      <ShowInventory/>
+      {/* <ShowInventory/> */}
       {/* <Display users={users}/> */}
       {/* <Header/> */}
       
@@ -27,6 +30,7 @@ function App() {
       {/* <Header/> */}
       {/* <ShowInventory/> */}
       {/* <Donate/> */}
+      
       {/* <CardsList/> */}
       
       {/* <Display users={users}/> */}
@@ -36,6 +40,8 @@ function App() {
       <Display users={users}/> */}
       {/* <Header/> */}
       {/* <Cart/> */}
+      <AdminList/>
+      
     </div>
   );
 }
