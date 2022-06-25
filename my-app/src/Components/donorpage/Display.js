@@ -1,9 +1,9 @@
 import React from 'react'
 import { useState } from 'react';
 
-function Display({ props }) {
+function Display({ users }) {
 
-  const [users,setUsers]=useState(props);
+ 
   console.log(users)
   return (
     <div>
@@ -23,7 +23,9 @@ function Display({ props }) {
               <tr>
                 <th scope="row">1</th>
                 <td>{user.name}</td>
-                <td>{user.donation}</td>
+                {/* <td>{user.donation.map((e)=>{return(
+                 <p>{e}</p>)
+                })}</td> */}
                 <td>priceee</td>
                 <td>{user.phone}</td>
               </tr>
