@@ -1,8 +1,40 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import "./style.css";
 import Menu from "./MenuApi.js";
 import Card from "./Card";
 import NavBarCards from "./NavBarCards";
+
+import { db } from "./firebase";
+import {
+  collection,
+  getDocs,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
+
+
+
+const Resturant = () => {
+
+  const [invRecs,setInvRecs]=useState([]);
+  const invCollectionRef=collection(db,"inventory");
+
+  const [menuData, setMenuData] = useState(invRecs); // cards
+  const [menuList, setMenuList] = useState(uniqueList); // categories
+
+  useEffect(()=>{
+    const getInvRecs=async()=>{
+      const data=await getDocs(invCollectionRef);
+      setInvRecs(data.docs.map((doc)=>({...doc.data(),id:doc.id})))
+      
+    };
+    getInvRecs();
+    console.log(invRecs);
+  })
+
+
 
 const uniqueList = [
   ...new Set(
@@ -15,22 +47,24 @@ const uniqueList = [
 
 console.log(uniqueList);
 
-const Resturant = () => {
-  const [menuData, setMenuData] = useState(Menu);
-  const [menuList, setMenuList] = useState(uniqueList);
+
 
   const filterItem = (category) => {
     if (category === "All") {
-      setMenuData(Menu);
+      setMenuData(invRecs);
       return;
     }
 
-    const updatedList = Menu.filter((curElem) => {
+    const updatedList = invRecs.filter((curElem) => {
       return curElem.category === category;
     });
 
     setMenuData(updatedList);
   };
+
+
+
+
 
   return (
     <div style={{backgroundColor: 'rgb(243, 244, 246)'}}>
