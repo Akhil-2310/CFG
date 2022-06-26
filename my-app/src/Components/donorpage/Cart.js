@@ -21,10 +21,10 @@ function Cart() {
         <hr/>
         <div class="row">
             <div class="col-5">
-                <h5 class="p-3">Items: 5</h5>
+                <h5 class="p-3">Items: 4</h5>
             </div>
             <div class="col-5">
-                <h5 class="p-3">Total Price: 780 </h5>
+                <h5 class="p-3">Total Price: 662/- </h5>
             </div>
             <div class="col">
                 {/* <a href="{% url 'checkout' %}" class="btn btn-success m-2" style="float: right; display: inline-block;">Checkout</a> */}
@@ -56,15 +56,15 @@ function Cart() {
         <div class="row">
         
             <div class="col-4">
-                <p class="pt-4">Name</p>
+                <p class="pt-4">Wheat</p>
             </div>
             <div class="col-2">
-                <p class="pt-4">250</p>
+                <p class="pt-4">66</p>
             </div>
             <div class="col-2">
                 <span>
                 {/* style="display:inline-block" */}
-                    <p class="pt-4" >5</p>
+                    <p class="pt-4" >2kgs</p>
 
                     {/* <img src="" style={{width:10,height:auto,display: inline}}></img>
 
@@ -72,7 +72,73 @@ function Cart() {
                 </span>
         </div>
         <div class="col-2">
-            <p class="pt-4">3689</p>
+            <p class="pt-4">132</p>
+        </div>
+        </div>
+        <div class="row">
+        
+            <div class="col-4">
+                <p class="pt-4">Tomatoes</p>
+            </div>
+            <div class="col-2">
+                <p class="pt-4">40</p>
+            </div>
+            <div class="col-2">
+                <span>
+                {/* style="display:inline-block" */}
+                    <p class="pt-4" >5kgs</p>
+
+                    {/* <img src="" style={{width:10,height:auto,display: inline}}></img>
+
+                    <img src="" style={{width:10,height:auto,display: inline}}></img> */}
+                </span>
+        </div>
+        <div class="col-2">
+            <p class="pt-4">200</p>
+        </div>
+        </div>
+        <div class="row">
+        
+            <div class="col-4">
+                <p class="pt-4">Rajma</p>
+            </div>
+            <div class="col-2">
+                <p class="pt-4">70</p>
+            </div>
+            <div class="col-2">
+                <span>
+                {/* style="display:inline-block" */}
+                    <p class="pt-4" >3kgs</p>
+
+                    {/* <img src="" style={{width:10,height:auto,display: inline}}></img>
+
+                    <img src="" style={{width:10,height:auto,display: inline}}></img> */}
+                </span>
+        </div>
+        <div class="col-2">
+            <p class="pt-4">210</p>
+        </div>
+        </div>
+        <div class="row">
+        
+            <div class="col-4">
+                <p class="pt-4">Banana</p>
+            </div>
+            <div class="col-2">
+                <p class="pt-4">20</p>
+            </div>
+            <div class="col-2">
+                <span>
+                {/* style="display:inline-block" */}
+                    <p class="pt-4" >6kgs</p>
+
+                    {/* <img src="" style={{width:10,height:auto,display: inline}}></img>
+
+                    <img src="" style={{width:10,height:auto,display: inline}}></img> */}
+                </span>
+        </div>
+        <div class="col-2">
+            <p class="pt-4">120</p>
         </div>
         </div>
       
