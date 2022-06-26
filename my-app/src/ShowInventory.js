@@ -34,31 +34,21 @@ function ShowInventory() {
 
     const getInvRecs = async () => {
       const data = await getDocs(invCollectionRef);
-      setInvRecs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      setInvRecs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id }
+      )));
+     
     };
     getInvRecs();
   },[]);
 
 
 
-  // async function handleClick(){
-  //   console.log(newitemname+" "+newcat+" "+newitemcost);
-  //   // const createUser = async () => {
-  //   //   await addDoc(invCollectionRef, { itemname: newitemname, category: newcat, itemcost: Number(newitemcost)});
-  //   // };
-
-    
-  //     await addDoc(collection(db,"inventory"),{ itemname: newitemname, category: newcat, itemcost: Number(newitemcost)})
-  //   //  addDoc(invCollectionRef, { itemname: newitemname, category: newcat, itemcost: Number(newitemcost)});
-    
-  //   // console.log(createUser);
-  // }
-
   const handleSubmit = async (e) => {
+    
     e.preventDefault()
     try {
       await addDoc(collection(db, "inventory"), {
-        itemname: newitemname, category: newcat, itemcost: Number(newitemcost)
+        itemname: newitemname, category: newcat, itemcost: Number(newitemcost),amount:0
       })
       window.location.reload();
       // onClose()
@@ -66,7 +56,6 @@ function ShowInventory() {
       alert(err)
     }
   }
-
   return (
     <div class="container px-5 py-24 mx-auto" style={{"font-family":"'Quicksand', sans-serif"}}>
       <div class="flex flex-col text-center w-full mb-20">
@@ -90,12 +79,14 @@ function ShowInventory() {
           </thead>
         </table>
         {invRecs.map((invRecItem, index) => {
+          
           return (
             <InvCard
               key={index}
               name={invRecItem.itemname}
               category={invRecItem.category}
               price={invRecItem.itemcost}
+              id={invRecItem.id}
             ></InvCard>
           );
         })}
