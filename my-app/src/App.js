@@ -6,8 +6,12 @@ import Display from './Components/donorpage/Display';
 import ShowInventory from './ShowInventory';
 import CardsList from './CardsList';
 import Donate from './Components/donorpage/Donate';
+import PayPal from './Components/PayPal';
+import React, {useState} from "react";
+
 
 function App() {
+const [checkout,setCheckOut] = useState(false)
   const users=[{
     "corporate":true,
     "donation":{
@@ -19,6 +23,11 @@ function App() {
   }]
   return (
     <div className="App">
+    {checkout ? (
+    <PayPal />
+     ) : (
+    
+    <button onClick={()=>{setCheckOut(true)}}>Checkout</button>)}
       <ShowInventory/>
       {/* <Display users={users}/> */}
       {/* <Header/> */}
