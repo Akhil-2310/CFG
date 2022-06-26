@@ -16,16 +16,14 @@ import {
 
 
 
-const Resturant = () => {
-  
-
+const Resturant = (props) => {
+  console.log(props);
   const [invRecs,setInvRecs]=useState([]);
   const invCollectionRef=collection(db,"inventory");
 
   const uniqueList = [
     ...new Set(
       invRecs.map((curElem) => {
-        console.log(curElem.category)
         return curElem.category;
       })
     ),
@@ -35,32 +33,36 @@ const Resturant = () => {
   const [menuData, setMenuData] = useState(invRecs); // cards
   const [menuList, setMenuList] = useState(uniqueList); // categories
   
+  
 
   useEffect(()=>{
-    setMenuList(uniqueList)
+    if(uniqueList.join()!==menuList.join()){
+      setMenuList(uniqueList)
+    }
+  
   },[uniqueList])
 
-  console.log("unique list",uniqueList)
+
   
 
   useEffect(()=>{
     const getInvRecs=async()=>{
       const data=await getDocs(invCollectionRef);
-      console.log(data.docs)
-      console.log(data.docs.map((doc)=>({...doc.data(),id:doc.id})))
+ 
+      
       setInvRecs(data.docs.map((doc)=>({...doc.data(),id:doc.id})))
       setMenuData(data.docs.map((doc)=>({...doc.data(),id:doc.id})))
       
     };
     getInvRecs();
-    console.log(invRecs);
+  
   },[])
 
 
 
 
 
-console.log(uniqueList);
+
 
 
   const filterItem = (category) => {
@@ -86,7 +88,7 @@ console.log(uniqueList);
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
       <NavBarCards filterItem={filterItem} menuList={menuList} />
-      <Card menuData={menuData} />
+      <Card menuData={menuData} buyList={props.buyList} setBuyList={props.setBuyList} />
     </div>
   );
 };

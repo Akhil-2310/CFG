@@ -13,29 +13,26 @@ import AdminList from './AdminList';
 import Header from './Components/Navbar/Header'
 import ShowDonors from './Admin_don';
 import ShowAmount from './Amount';
-
+import {useState} from "react";
 
 function App() {
-  const users = [{
-    "corporate": true,
-    "donation": {
-      "rice": "500"
-    },
-    "email": "dfsd@gmail.com",
-    "name": "hello",
-    "phone": "9380309384"
-  }]
+  const [detailsObj, setDetailsObj] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
 
+  const [buyList, setBuyList] =useState({});
   return <BrowserRouter>
     {/* Nested routing */}
     <Routes>
       {/* whatever we write in home would be there in all other components */}
       <Route path='/' element={<Header />}>
         <Route index element={<Home />} />
-        <Route path='listitems' element={<CardsList />} />
+        <Route path='listitems' element={<CardsList detailsObj={detailsObj} buyList={buyList} setBuyList={setBuyList}/>} />
         <Route path='cart' element={<Cart />} />
         <Route path='checkout' element={<h1>Checkout</h1>} />
-        <Route path='donate' element={<Donate/>} />
+        <Route path='donate' element={<Donate detailsObj={detailsObj} setDetailsObj={setDetailsObj}/>} />
         {/* <Route path='cart' element ={<Cart/>}/> */}
     
       </Route>
