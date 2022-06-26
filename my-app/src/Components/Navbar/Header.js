@@ -7,7 +7,7 @@ import Donate from '../donorpage/Donate';
 function Header() {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-dark " style={{"background-color": "#525d87", "margin":"auto"}} >
+            <nav className="navbar navbar-expand-lg navbar-dark h-50" style={{"background-color": "#525d87", "margin":"auto", "height":30}} >
             <div className="container-fluid" style={{"float":"right"}}>
                 {/* <a className="navbar-brand" href="#">Navbar</a> */}
                 <Link to='/home' className="nav-item nav-link"> <img src={'images/logo.png'} style={{"height":35, "width":80, "float":"left"}} /></Link>
