@@ -15,6 +15,7 @@ import ShowDonors from './Admin_don';
 import ShowAmount from './Amount';
 import Admin_don from './Admin_don'
 import {useState} from "react";
+import About from './Components/About/About';
 
 function App() {
  
@@ -40,6 +41,7 @@ function App() {
         <Route path='donate' element={<Donate/>} />
         <Route path='showinventory' element ={<ShowInventory/>}/>
         <Route path='amount' element ={<ShowAmount/>}/>
+        <Route path='about' element ={<About/>}/>
         <Route path='admin-don' element ={<Admin_don/>}/>
         {/* <Route path='congrats' element ={<C/>}/>
         <Route path='checkout' element ={<C/>}/> */}

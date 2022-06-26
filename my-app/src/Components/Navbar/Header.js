@@ -7,21 +7,21 @@ import Donate from '../donorpage/Donate';
 function Header() {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-dark " style={{"background-color": "#525d87"}} >
-            <div className="container-fluid">
-                <img />
-                <a className="navbar-brand" href="#">Navbar</a>
+            <nav className="navbar navbar-expand-lg navbar-dark " style={{"background-color": "#525d87", "margin":"auto"}} >
+            <div className="container-fluid" style={{"float":"right"}}>
+                {/* <a className="navbar-brand" href="#">Navbar</a> */}
+                <Link to='/home' className="nav-item nav-link"> <img src={'images/logo.png'} style={{"height":35, "width":80, "float":"left"}} /></Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup" style={{"font-family":"'Quicksand', sans-serif", "font-weight":"bold", "flex":"right"}}>
                     <div className="navbar-nav">
                         <Link to='/home' className="nav-item nav-link">HOME </Link>
                         <Link to='/about' className="nav-item nav-link">
                             ABOUT
                         </Link>
-                        <Link to='/contact' className="nav-item nav-link">
-                            CONTACT
+                        <Link to='/signUp' className="nav-item nav-link">
+                            ADMIN
                         </Link>
                         <Link to='/donate' className="nav-item nav-link">
                             DONATE
@@ -31,12 +31,12 @@ function Header() {
             </div>
             </nav>
             <Outlet />
-            {/* <Routes>
+            <Routes>
                     <Route path='/home' element={<Home/>}/>
                     <Route path='/about' element={<About/>}/>
-                    <Route path='/contact' element={<Contact/>}/>
+                    <Route path='/signUp' element={<Contact/>}/>
                     <Route path='/donate' element={<Donate/>}/>
-                </Routes> */}
+                </Routes>
         </div>
         
     //     <div className="background-color"> 
