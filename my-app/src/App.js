@@ -7,6 +7,18 @@ import ShowInventory from './ShowInventory';
 import CardsList from './CardsList';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Donate from './Components/donorpage/Donate';
+<<<<<<< HEAD
+import PayPal from './Components/PayPal';
+import React, {useState} from "react";
+
+
+function App() {
+const [checkout,setCheckOut] = useState(false)
+  const users=[{
+    "corporate":true,
+    "donation":{
+      "rice":"500"
+=======
 import AdminListItem from './Components/AdminListItem';
 import AdminListItemForm from './Components/AdminListItemForm';
 import AdminList from './AdminList';
@@ -20,6 +32,7 @@ function App() {
     "corporate": true,
     "donation": {
       "rice": "500"
+>>>>>>> c1a5e7d37a1640d2177570c52ad4bf5d92fc546a
     },
     "email": "dfsd@gmail.com",
     "name": "hello",
