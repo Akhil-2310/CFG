@@ -5,7 +5,9 @@ import {
     collection,
     addDoc,
     updateDoc,
+    deleteDoc,
     doc,
+
 } from "firebase/firestore";
 import { db } from "./firebase";
 //import Showform from "./form";
@@ -19,8 +21,13 @@ function ShowAmount() {
     // const [newemail, setnewemail] = useState("");
     const [docRecs, setdocRecs] = useState([]);
     const invCollectionRef = collection(db, "inventory");
-
-    useEffect(() => {
+    
+    const deleteUser = async (id) => {
+        const userDoc = doc(db, "inventory", id);
+        await deleteDoc(userDoc);
+      };
+    
+      useEffect(() => {
 
         const getdocRecs = async () => {
             const data = await getDocs(invCollectionRef);

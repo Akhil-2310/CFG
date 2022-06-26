@@ -6,6 +6,7 @@ function DonCard(props) {
             <div>{props.name}</div>
             <div>{props.email}</div>
             <div>{props.phone}</div>
+            
         </div>
     )
 }
